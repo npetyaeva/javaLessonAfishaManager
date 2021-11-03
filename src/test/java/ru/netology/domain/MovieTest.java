@@ -5,7 +5,7 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 class MovieTest {
-    private Movie first = new Movie(1, "/img/img01.jpeg", "Serenity", "thriller");
+    private final Movie first = new Movie(1, "/img/img01.jpeg", "Serenity", "thriller");
 
     @Test
     void shouldGetId() {
@@ -25,7 +25,7 @@ class MovieTest {
     }
 
     @Test
-    void getImg() {
+    void shouldGetImg() {
         String expected = "/img/img01.jpeg";
         String actual = first.getImg();
 
@@ -33,7 +33,7 @@ class MovieTest {
     }
 
     @Test
-    void setImg() {
+    void shouldSetImg() {
         String expected = "/img/img02.jpeg";
         first.setImg("/img/img02.jpeg");
         String actual = first.getImg();
@@ -42,7 +42,7 @@ class MovieTest {
     }
 
     @Test
-    void getName() {
+    void shouldGetName() {
         String expected = "Serenity";
         String actual = first.getName();
 
@@ -50,7 +50,7 @@ class MovieTest {
     }
 
     @Test
-    void setName() {
+    void shouldSetName() {
         String expected = "True Detective";
         first.setName("True Detective");
         String actual = first.getName();
@@ -59,7 +59,7 @@ class MovieTest {
     }
 
     @Test
-    void getGenre() {
+    void shouldGetGenre() {
         String expected = "thriller";
         String actual = first.getGenre();
 
@@ -67,7 +67,7 @@ class MovieTest {
     }
 
     @Test
-    void setGenre() {
+    void shouldSetGenre() {
         String expected = "detective";
         first.setGenre("detective");
         String actual = first.getGenre();
