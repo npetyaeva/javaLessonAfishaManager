@@ -11,13 +11,24 @@ public class AfishaManager {
     // public int getNumberMovies() { return numberMovies; }
 
     public void add(Movie newItem) {
-        int length = movies.length + 1;
-        Movie[] tmp = new Movie[length];
+        boolean contains = false;
+
         for (int i = 0; i < movies.length; i++) {
-            tmp[i] = movies[i];
+            if (movies[i].getImg() == newItem.getImg() && movies[i].getName() == newItem.getName() && movies[i].getGenre() == newItem.getGenre()) {
+            // if (movies[i].equals(newItem)) {
+                contains = true;
+            };
         }
-        tmp[tmp.length - 1] = newItem;
-        movies = tmp;
+
+        if (!contains) {
+            int length = movies.length + 1;
+
+            Movie[] tmp = new Movie[length];
+            System.arraycopy(movies, 0, tmp, 0, movies.length);
+
+            tmp[tmp.length - 1] = newItem;
+            movies = tmp;
+        }
     }
 
     public Movie[] getAll() {

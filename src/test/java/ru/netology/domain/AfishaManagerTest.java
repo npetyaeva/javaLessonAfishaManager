@@ -20,6 +20,7 @@ class AfishaManagerTest {
     private Movie ninth = new Movie(9, "/img/img09.jpeg", "Jonathan Strange and Mr Norrell", "fantasy");
     private Movie tenth = new Movie(10, "/img/img10.jpeg", "Taboo", "thriller");
     private Movie eleventh = new Movie(11, "/img/img11.jpeg", "The Expanse", "science fiction");
+    private Movie twelfth = new Movie(12, "/img/img01.jpeg", "Serenity", "thriller");
 
     @Test
     void shouldAddOneItem() {
@@ -40,6 +41,18 @@ class AfishaManagerTest {
 
         Movie[] actual = list.getAll();
         Movie[] expected = new Movie[]{third, second, first};
+
+        assertArrayEquals(expected, actual);
+    }
+
+    @Test
+    void shouldNotAddSameMovie() {
+        list.add(first);
+        list.add(second);
+        list.add(twelfth);
+
+        Movie[] actual = list.getAll();
+        Movie[] expected = new Movie[]{second, first};
 
         assertArrayEquals(expected, actual);
     }
