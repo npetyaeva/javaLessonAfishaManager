@@ -20,7 +20,7 @@ class AfishaManagerTest {
     private Movie ninth = new Movie(9, "/img/img09.jpeg", "Jonathan Strange and Mr Norrell", "fantasy");
     private Movie tenth = new Movie(10, "/img/img10.jpeg", "Taboo", "thriller");
     private Movie eleventh = new Movie(11, "/img/img11.jpeg", "The Expanse", "science fiction");
-    private Movie twelfth = new Movie(12, "/img/img01.jpeg", "Serenity", "thriller");
+    private Movie twelfth = new Movie(1, "/img/img01.jpeg", "Serenity", "thriller");
 
     @Test
     void shouldAddOneItem() {
@@ -50,6 +50,9 @@ class AfishaManagerTest {
         list.add(first);
         list.add(second);
         list.add(twelfth);
+
+        // System.out.println(first.equals(first));   true
+        // System.out.println(twelfth.equals(first)); false
 
         Movie[] actual = list.getAll();
         Movie[] expected = new Movie[]{second, first};
