@@ -8,6 +8,8 @@ public class AfishaManager {
 
     public AfishaManager(int numberMovies) { this.numberMovies = numberMovies; }
 
+    // public int getNumberMovies() { return numberMovies; }
+
     public void add(Movie newItem) {
         int length = movies.length + 1;
         Movie[] tmp = new Movie[length];

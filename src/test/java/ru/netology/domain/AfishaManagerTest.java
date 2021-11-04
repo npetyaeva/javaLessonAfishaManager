@@ -7,7 +7,7 @@ import static org.junit.jupiter.api.Assertions.*;
 class AfishaManagerTest {
 
     private AfishaManager list = new AfishaManager();
-    private AfishaManager list1 = new AfishaManager(5);
+    private AfishaManager listWithArg = new AfishaManager(5);
 
     private Movie first = new Movie(1, "/img/img01.jpeg", "Serenity", "thriller");
     private Movie second = new Movie(2, "/img/img02.jpeg", "True Detective", "detective");
@@ -101,12 +101,12 @@ class AfishaManagerTest {
     //-----------Second Construct------------
     @Test
     void shouldGetAllLessMax() {
-        list1.add(first);
-        list1.add(second);
-        list1.add(third);
-        list1.add(fourth);
+        listWithArg.add(first);
+        listWithArg.add(second);
+        listWithArg.add(third);
+        listWithArg.add(fourth);
 
-        Movie[] actual = list1.getAll();
+        Movie[] actual = listWithArg.getAll();
         Movie[] expected = new Movie[]{fourth, third, second, first};
 
         assertArrayEquals(expected, actual);
@@ -114,13 +114,13 @@ class AfishaManagerTest {
 
     @Test
     void shouldGetAllMax() {
-        list1.add(first);
-        list1.add(second);
-        list1.add(third);
-        list1.add(fourth);
-        list1.add(fifth);
+        listWithArg.add(first);
+        listWithArg.add(second);
+        listWithArg.add(third);
+        listWithArg.add(fourth);
+        listWithArg.add(fifth);
 
-        Movie[] actual = list1.getAll();
+        Movie[] actual = listWithArg.getAll();
         Movie[] expected = new Movie[]{fifth, fourth, third, second, first};
 
         assertArrayEquals(expected, actual);
@@ -128,14 +128,14 @@ class AfishaManagerTest {
 
     @Test
     void shouldGetMoreMax() {
-        list1.add(first);
-        list1.add(second);
-        list1.add(third);
-        list1.add(fourth);
-        list1.add(fifth);
-        list1.add(sixth);
+        listWithArg.add(first);
+        listWithArg.add(second);
+        listWithArg.add(third);
+        listWithArg.add(fourth);
+        listWithArg.add(fifth);
+        listWithArg.add(sixth);
 
-        Movie[] actual = list1.getAll();
+        Movie[] actual = listWithArg.getAll();
         Movie[] expected = new Movie[]{sixth, fifth, fourth, third, second};
 
         assertArrayEquals(expected, actual);
