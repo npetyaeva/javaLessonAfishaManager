@@ -5,12 +5,12 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 class MovieTest {
-    private final Movie first = new Movie(1, "/img/img01.jpeg", "Serenity", "thriller");
+    private final Movie temp = new Movie(1, "/img/img01.jpeg", "Serenity", "thriller");
 
     @Test
     void shouldGetId() {
         int expected = 1;
-        int actual = first.getId();
+        int actual = temp.getId();
 
         assertEquals(expected, actual);
     }
@@ -18,8 +18,8 @@ class MovieTest {
     @Test
     void shouldSetId() {
         int expected = 2;
-        first.setId(2);
-        int actual = first.getId();
+        temp.setId(2);
+        int actual = temp.getId();
 
         assertEquals(expected, actual);
     }
@@ -27,7 +27,7 @@ class MovieTest {
     @Test
     void shouldGetImg() {
         String expected = "/img/img01.jpeg";
-        String actual = first.getImg();
+        String actual = temp.getImg();
 
         assertEquals(expected, actual);
     }
@@ -35,8 +35,8 @@ class MovieTest {
     @Test
     void shouldSetImg() {
         String expected = "/img/img02.jpeg";
-        first.setImg("/img/img02.jpeg");
-        String actual = first.getImg();
+        temp.setImg("/img/img02.jpeg");
+        String actual = temp.getImg();
 
         assertEquals(expected, actual);
     }
@@ -44,7 +44,7 @@ class MovieTest {
     @Test
     void shouldGetName() {
         String expected = "Serenity";
-        String actual = first.getName();
+        String actual = temp.getName();
 
         assertEquals(expected, actual);
     }
@@ -52,8 +52,8 @@ class MovieTest {
     @Test
     void shouldSetName() {
         String expected = "True Detective";
-        first.setName("True Detective");
-        String actual = first.getName();
+        temp.setName("True Detective");
+        String actual = temp.getName();
 
         assertEquals(expected, actual);
     }
@@ -61,7 +61,7 @@ class MovieTest {
     @Test
     void shouldGetGenre() {
         String expected = "thriller";
-        String actual = first.getGenre();
+        String actual = temp.getGenre();
 
         assertEquals(expected, actual);
     }
@@ -69,8 +69,8 @@ class MovieTest {
     @Test
     void shouldSetGenre() {
         String expected = "detective";
-        first.setGenre("detective");
-        String actual = first.getGenre();
+        temp.setGenre("detective");
+        String actual = temp.getGenre();
 
         assertEquals(expected, actual);
     }
