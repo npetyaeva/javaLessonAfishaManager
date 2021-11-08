@@ -5,6 +5,8 @@ public class Movie {
     private String img;
     private String name;
     private String genre;
+    
+    public Movie() {}
 
     public Movie(int id, String img, String name, String genre) {
         this.id = id;
